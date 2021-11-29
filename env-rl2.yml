@@ -1,0 +1,19 @@
+name: rl2
+
+dependencies:
+- python=3.7
+- numpy=1.19
+- scipy=1.4.1
+- matplotlib
+- spyder
+- pandas=1.1.5
+- pip
+- seaborn
+- scikit-learn
+- h5py
+- pillow
+- ipython
+- jupyter
+- scikit-image
+- pip:
+  - tensorflow==2.4.0
