@@ -6,7 +6,7 @@
 import random
 import math
 
-
+#%%
 # 게임 상태
 class State:
     # 초기화
@@ -83,7 +83,7 @@ class State:
                 str += '\n'
         return str
 
-
+#%%
 # 랜덤으로 행동 선택
 def random_action(state):
     legal_actions = state.legal_actions()
@@ -128,7 +128,7 @@ def alpha_beta_action(state):
     # 합법적인 수의 상태 가치의 최대값을 갖는 행동 반환
     return best_action
 
-
+#%%
 # 플레이아웃
 def playout(state):
     # 패배 시, 상태 가치 -1
@@ -147,7 +147,7 @@ def playout(state):
 def argmax(collection):
     return collection.index(max(collection))
 
-
+#%%
 # 몬테카를로 트리 탐색을 활용한 행동 선택
 def mcts_action(state):
     # 몬테카를로 트리 탐색 노드
@@ -235,7 +235,7 @@ def mcts_action(state):
         n_list.append(c.n)
     return legal_actions[argmax(n_list)]
 
-
+#%%
 # 동작 확인
 if __name__ == '__main__':
     # 상태 생성

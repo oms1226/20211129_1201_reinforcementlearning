@@ -14,12 +14,12 @@ import numpy as np
 import pickle
 import os
 
-debug = 0
+debug = 1
 
 # 파라미터 준비
 SP_GAME_COUNT = 500  # 셀프 플레이를 수행할 게임 수(오리지널: 25,000)
 SP_TEMPERATURE = 1.0  # 볼츠만 분포의 온도 파라미터
-
+#%%
 # 선 수를 둔 플레이어 가치
 def first_player_value(ended_state):
     # 1: 선 수 플레이어 승리, -1: 선 수 플레이어 패배, 0: 무승부
@@ -37,7 +37,7 @@ def write_data(history):
     with open(path, mode='wb') as f:
         pickle.dump(history, f)
 
-
+#%%
 # 1 게임 실행
 def play(model):
     # 학습 데이터
@@ -74,7 +74,7 @@ def play(model):
         value = -value
     return history
 
-
+#%%
 # 셀프 플레이
 def self_play():
     # 학습 데이터
@@ -101,7 +101,7 @@ def self_play():
     K.clear_session()
     del model
 
-
+#%%
 # 동작 확인
 if __name__ == '__main__':
     self_play()

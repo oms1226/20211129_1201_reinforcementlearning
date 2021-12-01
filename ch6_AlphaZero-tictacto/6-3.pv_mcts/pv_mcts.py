@@ -32,7 +32,7 @@ def predict(model, state):
     value = y[1][0][0]
     return policies, value
 
-
+#%%
 # 노드 리스트를 시행 횟수 리스트로 변환
 def nodes_to_scores(nodes):
     scores = []
@@ -120,7 +120,7 @@ def pv_mcts_scores(model, state, temperature):
         scores = boltzman(scores, temperature)
     return scores
 
-
+#%%
 # 몬테카를로 트리 탐색을 활용한 행동 선택
 def pv_mcts_action(model, temperature=0):
     def pv_mcts_action(state):
@@ -135,7 +135,7 @@ def boltzman(xs, temperature):
     xs = [x ** (1 / temperature) for x in xs]
     return [x / sum(xs) for x in xs]
 
-
+#%%
 # 동작 확인
 if __name__ == '__main__':
     # 모델 로드

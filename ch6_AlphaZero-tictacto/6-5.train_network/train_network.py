@@ -14,14 +14,14 @@ import pickle
 # 파라미터 준비
 RN_EPOCHS = 100  # 학습 횟수
 
-
+#%%
 # 학습 데이터 로드
 def load_data():
     history_path = sorted(Path('./data').glob('*.history'))[-1]
     with history_path.open(mode='rb') as f:
         return pickle.load(f)
 
-
+#%%
 # 듀얼 네트워크 학습
 def train_network():
     # 학습 데이터 로드
@@ -67,7 +67,7 @@ def train_network():
     K.clear_session()
     del model
 
-
+#%%
 # 동작 확인
 if __name__ == '__main__':
     train_network()

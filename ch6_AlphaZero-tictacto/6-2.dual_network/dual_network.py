@@ -9,13 +9,14 @@ from tensorflow.keras.regularizers import l2
 from tensorflow.keras import backend as K
 import os
 
+#%%
 # 파라미터 준비
 DN_FILTERS = 128  # 컨볼루션 레이어 커널 수(오리지널 256）
 DN_RESIDUAL_NUM = 16  # 레지듀얼 블록 수(오리지널 19)
 DN_INPUT_SHAPE = (3, 3, 2)  # 입력 셰이프
 DN_OUTPUT_SIZE = 9  # 행동 수(배치 수(3*3))
 
-
+#%%
 # 컨볼루션 레이어 생성
 def conv(filters):
     return Conv2D(filters, 3, padding='same', use_bias=False,
@@ -37,7 +38,7 @@ def residual_block():
 
     return f
 
-
+#%%
 # 듀얼 네트워크 생성
 def dual_network():
     # 모델 생성이 완료된 경우 처리하지 않음
@@ -78,7 +79,7 @@ def dual_network():
     K.clear_session()
     del model
 
-
+#%%
 # 동작 확인
 if __name__ == '__main__':
     dual_network()
